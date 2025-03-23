@@ -3,11 +3,11 @@ import { Input } from "../component/input"
 const Form = () =>  {
 	const inputProps = {
 		mortgageAmountContainerClassName: "mortgage_amount-container ",
-
 		formInputLabel: "form-input-label",
 		mortgageAmountInputContainerClassName: "mortgage_amount_input-container",
 		mortgageInputCurrencyClassName: "mortgage_input-currency",
-		inputClassName: "form-input-class"
+		inputClassName: "form-input-class",
+		formInputLabelClass: "form-input-label"
 	}
 	return (
 		<form action="">
