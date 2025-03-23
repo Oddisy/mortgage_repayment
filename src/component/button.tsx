@@ -1,13 +1,16 @@
-
+import "../css/button.css"
 import {ButtonProps} from "../../interface"
-export  const Button =  ({text, btnClassName}: ButtonProps) => {
+export const Button = ({ btnText, btnClassName }: ButtonProps) => {
 	return (
 		
-			<button className={btnClassName}>
-				{text}
+		<div className={btnClassName}>
+			<button>
 
-
+				{btnText}
 			</button>
+
+
+		</div>
 
 		
 	)

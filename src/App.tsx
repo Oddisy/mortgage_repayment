@@ -1,7 +1,10 @@
 import "./App.css"
 import IllustrationEmpty from "../src/assets/images/illustration-empty.svg"
+import { Button } from "../src/component/button"
+import Form from "./component/form"
 
 function App() {
+
 
   return (
     
@@ -9,12 +12,9 @@ function App() {
       <div className="container_sub-container">
         <div className="content-container">
           <div className="left-container">
-            <div><h1></h1>
-              <button></button></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className="left_container_calculator-container"><h1>Mortgage Calculator</h1>
+              <Button btnClassName="cancel-all" btnText="Cancel All" /></div>
+            <Form />
           </div>
           <div className="right-container">
             <div className="right_container-child">
