@@ -1,4 +1,5 @@
 import "../css/form.css"
+import Input from "../component/input"
 const Form = () =>  {
 	return (
 		<form action="">
@@ -9,6 +10,8 @@ const Form = () =>  {
 		    <input type="text" className="input-class-name" />
 		  </div>
 		</div>
+			<Input mortgageAmountContainerClassName="mortgage_amount-container "
+				mortgageAmountInputContainerClassName="mortgage_amount_input-container" />
 	      </form>
 	)
 }

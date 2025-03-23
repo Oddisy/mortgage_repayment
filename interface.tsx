@@ -4,10 +4,11 @@ export  interface ButtonProps{
 	onClick?: () => void
 }
 export interface InputProps {
-	mortgageAmountContainer: string
-	mortgageAmountInputContainer: string
-	mortgageInputCurrency: string
+	mortgageAmountContainerClassName: string
+	mortgageAmountInputContainerClassName: string
+	mortgageInputCurrencyClassName: string
 	labelText: string
 	htmlFor: string
+	inputClassName: string
 
 }
