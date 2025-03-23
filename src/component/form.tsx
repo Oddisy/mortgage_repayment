@@ -1,17 +1,43 @@
 import "../css/form.css"
-import Input from "../component/input"
+import { Input } from "../component/input"
 const Form = () =>  {
+	const inputProps = {
+		mortgageAmountContainerClassName: "mortgage_amount-container ",
+
+		formInputLabel: "form-input-label",
+		mortgageAmountInputContainerClassName: "mortgage_amount_input-container",
+		mortgageInputCurrencyClassName: "mortgage_input-currency",
+		inputClassName: "form-input-class"
+	}
 	return (
 		<form action="">
-		<div className="mortgage_amount-container ">
-		  <label htmlFor="" className="input-label">Mortgage Amount</label>
-		  <div className="mortgage_amount_input-container">
-		    <div className="mortgage_input-currency">$</div>
-		    <input type="text" className="input-class-name" />
-		  </div>
-		</div>
-			<Input mortgageAmountContainerClassName="mortgage_amount-container "
-				mortgageAmountInputContainerClassName="mortgage_amount_input-container" />
+			<div className="mortgage-duration--container">
+
+				<Input
+					htmlFor="text"
+					{...inputProps}
+					currencySign="$"
+					labelText="Mortgage Amount"
+
+				/>
+			</div>
+
+			<div className="mortgage-duration--container">
+				<Input
+					htmlFor="text"
+					{...inputProps}
+					labelText="Mortgage Term"
+					currencySign="years"
+
+				/>
+				<Input
+					htmlFor="text"
+					{...inputProps}
+					currencySign="%"
+					labelText="Interest Rate"
+
+				/>
+			</div>
 	      </form>
 	)
 }

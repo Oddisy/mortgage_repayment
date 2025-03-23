@@ -1,10 +1,11 @@
-.input-label{
+.form-input-label {
 	color: var(--Slate-700);
 	font-size: var( --font-siz-small);
 	font-family: var(--font-family);
 }
-.input-class-name{
+.form-input-class {
 	width: 100%;
+	padding-left: 12%;
 	height: 2rem;
 	border-radius: 0.2rem;
 	border: 1px solid var(--Slate-700);
@@ -24,7 +25,8 @@
 	position: absolute;
 	top:0px;
 	left: 0px;
-	width: 10%;
+	
+		width: 10%;
 	height:100%;
 	border-top-left-radius: 0.2rem;
 	border-bottom-left-radius:0.2rem;
@@ -32,4 +34,9 @@
 	opacity: 0.5;
 	display: grid;
 	place-content: center;
+}
+.mortgage-duration--container {
+	display: flex;
+	width: 100%;
+	gap: 10%;
 }

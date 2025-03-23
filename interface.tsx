@@ -10,5 +10,5 @@ export interface InputProps {
 	labelText: string
 	htmlFor: string
 	inputClassName: string
-
+	currencySign: string
 }
