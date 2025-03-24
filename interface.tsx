@@ -6,7 +6,7 @@ export  interface ButtonProps{
 export interface InputProps {
 	mortgageAmountContainerClassName: string
 	mortgageAmountInputContainerClassName: string
-	mortgageInputCurrencyClassName: string
+	mortgageInputCurrencyClassName?: string
 	labelText: string
 	htmlFor: string
 	inputClassName: string

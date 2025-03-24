@@ -5,10 +5,12 @@ const Form = () =>  {
 		mortgageAmountContainerClassName: "mortgage_amount-container ",
 		formInputLabel: "form-input-label",
 		mortgageAmountInputContainerClassName: "mortgage_amount_input-container",
-		mortgageInputCurrencyClassName: "mortgage_input-currency",
+
 		inputClassName: "form-input-class",
-		formInputLabelClass: "form-input-label"
+		formInputLabelClass: "form-input-label",
+
 	}
+
 	return (
 		<form action="">
 			<div className="mortgage-duration--container">
@@ -18,6 +20,7 @@ const Form = () =>  {
 					{...inputProps}
 					currencySign="$"
 					labelText="Mortgage Amount"
+					mortgageInputCurrencyClassName="mortgage_input-currency left"
 
 				/>
 			</div>
@@ -28,6 +31,7 @@ const Form = () =>  {
 					{...inputProps}
 					labelText="Mortgage Term"
 					currencySign="years"
+					mortgageInputCurrencyClassName="mortgage_input-currency right"
 
 				/>
 				<Input
@@ -35,8 +39,14 @@ const Form = () =>  {
 					{...inputProps}
 					currencySign="%"
 					labelText="Interest Rate"
+					mortgageInputCurrencyClassName="mortgage_input-currency right"
 
 				/>
+			</div>
+			<div className="mortgage-type">
+				<Input
+					{...inputProps} />
+				<Input {...inputProps />
 			</div>
 	      </form>
 	)
