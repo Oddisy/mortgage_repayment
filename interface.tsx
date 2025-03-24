@@ -12,4 +12,6 @@ export interface InputProps {
 	inputClassName: string
 	formInputLabelClass: string
 	currencySign: string
+	inputType: string
+	mortgageType?: string
 }
