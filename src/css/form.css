@@ -3,3 +3,26 @@ form {
 	flex-direction: column;
 		gap: 1rem;
 }
+.mortgage-duration--container {
+	display: flex;
+	width: 100%;
+	gap: 3%;
+}
+
+.mortgage-type {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.mortgage-type--repayment {
+	border: 1px solid var(--Slate-700);
+	display: flex;
+	justify-content: space-between;
+}
+
+.mortgage-type--repayment-text {
+	display: flex;
+	gap: 1rem;
+	width: 20%;
+}
