@@ -39,13 +39,13 @@ const Form = () => {
 					inputClassName="form-input-class right"
 				/>
 			</div>
-			<div className="mortgage-type">
+			<div className="mortgage-type--container">
 				{mortgageTypeData.map((item, index) => (
 					<div key={index} className="mortgage-type--repayment">
 						<div className="mortgage-type--repayment-text">
 							<Input
 								{...inputProps}
-								labelText="Mortgage Term"
+								labelText={item.labelText}
 								inputType="radio"
 								mortgageAmountInputContainerClassName="mortgage_amount_input-container radio"
 								mortgageType={item.mortgageTypeText}

@@ -1,4 +1,4 @@
- const mortgageTypeData = [{ mortgageTypeText: "Repayment", labelText: "Mortgage Term" }, { mortgageTypeText: "Interest", labelText: "" }]
+ const mortgageTypeData = [{ mortgageTypeText: "Repayment", labelText: "Mortgage Term" }, { mortgageTypeText: "Interest ", labelText: "" }]
 
  const mortgageDurationData = [{}, {}]
 

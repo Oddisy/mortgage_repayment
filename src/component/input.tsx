@@ -25,9 +25,11 @@ export const Input = ({
 					<input className={inputClassName} type={inputType} />
 				</div>
 			) : (
-				<div className={mortgageAmountInputContainerClassName}>
-					<input className={inputClassName} type={inputType} />
-					<p>{mortgageType}</p>
+				<div className="mortgageRadioContainer">
+					<div className={mortgageAmountInputContainerClassName}>
+						<input className={inputClassName} type={inputType} />
+						<p>{mortgageType}</p>
+					</div>
 				</div>
 			)}
 		</div>
