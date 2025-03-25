@@ -7,14 +7,16 @@
 
 .form-input-class {
 	width: 100%;
-	padding-left: 12%;
+	padding-left: 13%;
 	height: 2rem;
 	border-radius: 0.2rem;
 	border: 1px solid var(--Slate-700);
 	outline: none;
 
 }
-
+.form-input-class.right {
+	padding-left: 1%;
+}
 .mortgage_amount-container {
 	width: 100%;
 	display: flex;
@@ -55,6 +57,7 @@
 	.mortgage_input-currency.right {
 		right: 0px;
 }
+
 
 
 

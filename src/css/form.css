@@ -19,6 +19,7 @@ form {
 	border: 1px solid var(--Slate-700);
 	display: flex;
 	justify-content: space-between;
+	width: full;
 }
 
 .mortgage-type--repayment-text {

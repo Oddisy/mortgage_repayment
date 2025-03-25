@@ -1,14 +1,8 @@
 import "../css/form.css"
 import { Input } from "../component/input"
+import { mortgageTypeData, inputProps } from "../data/formData"
 const Form = () =>  {
-	const inputProps = {
-		mortgageAmountContainerClassName: "mortgage_amount-container ",
 
-
-		inputClassName: "form-input-class",
-		formInputLabelClass: "form-input-label",
-
-	}
 
 	return (
 		<form action="">
@@ -20,7 +14,7 @@ const Form = () =>  {
 					currencySign="$"
 					labelText="Mortgage Amount"
 					mortgageInputCurrencyClassName="mortgage_input-currency left"
-
+					inputClassName="form-input-class"
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
 
@@ -36,6 +30,7 @@ const Form = () =>  {
 					mortgageInputCurrencyClassName="mortgage_input-currency right"
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
+					inputClassName="form-input-class right"
 
 				/>
 				<Input
@@ -46,32 +41,24 @@ const Form = () =>  {
 					mortgageInputCurrencyClassName="mortgage_input-currency right"
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
-
+					inputClassName="form-input-class right"
 				/>
 			</div>
 			<div className="mortgage-type">
-				<div className="mortage-type--repayment">
+				{mortgageTypeData.map((item, index) => (
+					<div key={index} className="mortage-type--repayment">
 					<div className="mortgage-type--repayment-text">
 						<Input
+
 							{...inputProps}
 							labelText="Mortgage Term"
 							inputType="radio"
 							mortgageAmountInputContainerClassName="mortgage_amount_input-container radio"
-							mortgageType="Repayment" />
+								mortgageType={item.mortgageTypeText}
+								inputClassName="form-input-class" />
 
 					</div>
-				</div>
-				<div className="mortage-type--repayment">
-					<div className="mortgage-type--repayment-text">
-						<Input
-							{...inputProps}
-
-							inputType="radio"
-							mortgageAmountInputContainerClassName="mortgage_amount_input-container radio"
-							mortgageType="Interest " />
-
-					</div>
-				</div>
+					</div>))}
 			</div>
 	      </form>
 	)
