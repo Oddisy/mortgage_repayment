@@ -23,11 +23,11 @@
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --font-family: 'Plus Jakarta Sans', sans-serif;
-  --font-siz-big: clamp(1.3rem, 0.664rem + 0.68vw, 1.5rem);
-    --font-siz-medium: clamp(1rem, 0.364rem + 0.68vw, 1.3rem);
+  --font-siz-big: clamp(1rem, 0.664rem + 0.68vw, 1.5rem);
+    --font-siz-medium: clamp(1rem, 0.364rem + 0.68vw, 1.1rem);
     --font-siz-small: clamp(0.8rem, 0.557rem + 0.34vw, 1rem);
     --padding: clamp(1rem, 0.547rem + 1.02vw, 1.5rem);
-    --button-padding-horizontal: clamp(0.25rem, 0.182rem + 0.34vw, 0.5rem);
+    --button-padding-horizontal: clamp(0.2rem, 0.182rem + 0.34vw, 0.5rem);
     --button-padding-vertical: clamp(0.125rem, 0.091rem + 0.17vw, 0.25rem);
     --variable-size-medium: clamp(0.5rem, 0.364rem + 0.68vw, 1rem);
   /* Background & Text */
@@ -181,7 +181,7 @@ height: 5vh;
   color: var(--Slate-500)
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 800px) {
   .content-container {
     width: 90vw;
   }
@@ -192,7 +192,7 @@ height: 5vh;
     flex-direction: column;
     width: 100%;
       height: 100vh;
-      
+  
     
       .right_container-child .illustration-img {
         width: 35%;
@@ -208,3 +208,4 @@ height: 5vh;
     height: 50vh;
     border-radius: 0px;
   }
+        }
