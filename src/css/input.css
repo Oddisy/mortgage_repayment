@@ -12,52 +12,8 @@
 	border-radius: 0.2rem;
 	border: 1px solid var(--Slate-700);
 	outline: none;
-
 }
 .form-input-class.right {
 	padding-left: 1%;
 }
-.mortgage_amount-container {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-		
-}
-
-.mortgage_amount_input-container {
-	position: relative;
-}
-								.mortgage_amount_input-container.radio {
-									display: flex;
-									align-items: center;
-									gap: 0.2rem;
-									background-color: red;
-									width: 30%;
-									border: 1px solid var(--Slate-700);
-								}
-.mortgage_input-currency {
-	position: absolute;
-	top: 0px;
-	width: max-content;
-	height: 100%;
-	border-top-left-radius: 0.2rem;
-	border-bottom-left-radius: 0.2rem;
-	background-color: var(--Slate-300);
-	opacity: 0.5;
-	display: grid;
-	place-content: center;
-	padding: 0.2rem var(--padding);
-	}
-	
-	.mortgage_input-currency.left {
-		left: 0px;
-	}
-	
-	.mortgage_input-currency.right {
-		right: 0px;
-}
-
-
-
 

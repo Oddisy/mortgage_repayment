@@ -3,9 +3,8 @@
  const mortgageDurationData = [{}, {}]
 
  const inputProps = {
-	mortgageAmountContainerClassName: "mortgage_amount-container ",
+	mortgageAmountContainerClass: "mortgage_amount-container ",
 	formInputLabelClass: "form-input-label",
-	mortgageAmountInputContainerClassName: "mortgage_amount_input-container radio"
 
 }
 

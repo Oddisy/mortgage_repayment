@@ -3,6 +3,48 @@ form {
 	flex-direction: column;
 		gap: 1rem;
 }
+.mortgage_amount-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background-color: rgb(255, 0, 238);
+}
+
+.mortgage_amount_input-container {
+	position: relative;
+}
+
+.mortgage_amount_input-container.radio {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+	background-color: red;
+	width: 30%;
+	border: 1px solid var(--Slate-700);
+}
+
+.mortgage_input-currency {
+	position: absolute;
+	top: 0px;
+	width: max-content;
+	height: 100%;
+	border-top-left-radius: 0.2rem;
+	border-bottom-left-radius: 0.2rem;
+	background-color: var(--Slate-300);
+	opacity: 0.5;
+	display: grid;
+	place-content: center;
+	padding: 0.2rem var(--padding);
+}
+
+.mortgage_input-currency.left {
+	left: 0px;
+}
+
+.mortgage_input-currency.right {
+	right: 0px;
+}
 .mortgage-duration--container {
 	display: flex;
 	width: 100%;
@@ -13,17 +55,18 @@ form {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	background-color: blue;
 }
 
 .mortgage-type--repayment {
-	border: 1px solid var(--Slate-700);
 	display: flex;
 	justify-content: space-between;
-	width: full;
+	width: 100%;
 }
 
 .mortgage-type--repayment-text {
 	display: flex;
 	gap: 1rem;
 	width: 20%;
+	
 }

@@ -1,13 +1,10 @@
-import "../css/form.css"
-import { Input } from "../component/input"
-import { mortgageTypeData, inputProps } from "../data/formData"
-const Form = () =>  {
-
-
+import "../css/form.css";
+import { Input } from "../component/input";
+import { mortgageTypeData, inputProps } from "../data/formData";
+const Form = () => {
 	return (
 		<form action="">
 			<div className="mortgage-duration--container">
-
 				<Input
 					htmlFor="text"
 					{...inputProps}
@@ -17,7 +14,6 @@ const Form = () =>  {
 					inputClassName="form-input-class"
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
-
 				/>
 			</div>
 
@@ -31,7 +27,6 @@ const Form = () =>  {
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
 					inputClassName="form-input-class right"
-
 				/>
 				<Input
 					htmlFor="text"
@@ -46,21 +41,21 @@ const Form = () =>  {
 			</div>
 			<div className="mortgage-type">
 				{mortgageTypeData.map((item, index) => (
-					<div key={index} className="mortage-type--repayment">
-					<div className="mortgage-type--repayment-text">
-						<Input
-
-							{...inputProps}
-							labelText="Mortgage Term"
-							inputType="radio"
-							mortgageAmountInputContainerClassName="mortgage_amount_input-container radio"
+					<div key={index} className="mortgage-type--repayment">
+						<div className="mortgage-type--repayment-text">
+							<Input
+								{...inputProps}
+								labelText="Mortgage Term"
+								inputType="radio"
+								mortgageAmountInputContainerClassName="mortgage_amount_input-container radio"
 								mortgageType={item.mortgageTypeText}
-								inputClassName="form-input-class" />
-
+								inputClassName="form-input-class"
+							/>
+						</div>
 					</div>
-					</div>))}
+				))}
 			</div>
-	      </form>
-	)
-}
-export default Form 
+		</form>
+	);
+};
+export default Form;
