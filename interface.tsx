@@ -1,7 +1,10 @@
-export  interface ButtonProps{
-	btnText: string
-	btnClassName?: string
-	onClick?: () => void
+import { ReactElement } from "react";
+
+export  interface ButtonProps {
+	btnText: string;
+	btnClassName?: string;
+	btnIcon?: ReactElement;
+	onClick?: () => void;
 }
 export interface InputProps {
 	mortgageAmountContainerClass: string;
@@ -14,4 +17,6 @@ export interface InputProps {
 	currencySign?: string;
 	inputType: string;
 	mortgageType?: string;
+	inputRadioName?: string;
+	inputRadioValue?: string
 }

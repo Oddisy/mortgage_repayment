@@ -1,17 +1,12 @@
 import "../css/button.css"
 import {ButtonProps} from "../../interface"
-export const Button = ({ btnText, btnClassName }: ButtonProps) => {
+export const Button = ({ btnText, btnClassName, btnIcon }: ButtonProps) => {
 	return (
-		
-		<div className={btnClassName}>
-			<button>
-
-				{btnText}
-			</button>
-
-
-		</div>
-
-		
-	)
-}
+		<button className={btnClassName}>
+			<div>
+				<div>{btnIcon}</div>
+				<p>{btnText}</p>
+			</div>
+		</button>
+	);
+};

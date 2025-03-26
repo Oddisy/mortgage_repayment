@@ -1,6 +1,8 @@
 import "../css/form.css";
 import { Input } from "../component/input";
 import { mortgageTypeData, inputProps } from "../data/formData";
+import { Button } from "./button";
+import { IoIosCalculator } from "react-icons/io";
 const Form = () => {
 	return (
 		<form action="">
@@ -50,11 +52,19 @@ const Form = () => {
 								mortgageAmountInputContainerClassName="mortgage_amount_input-container radio"
 								mortgageType={item.mortgageTypeText}
 								inputClassName="form-input-class"
+								inputRadioName={item.inputRadioName}
+								inputRadioValue={item.inputRadioValue}
 							/>
 						</div>
 					</div>
 				))}
 			</div>
+			<Button
+			btnIcon={<IoIosCalculator/>}
+				btnClassName="form-submit--button"
+				btnText="Calculate Repayments"
+			/>
+			
 		</form>
 	);
 };

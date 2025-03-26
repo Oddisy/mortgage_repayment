@@ -11,6 +11,8 @@ export const Input = ({
 	formInputLabelClass,
 	inputType,
 	mortgageType,
+	inputRadioValue,
+	inputRadioName,
 }: InputProps) => {
 	return (
 		<div className={mortgageAmountContainerClass}>
@@ -27,7 +29,12 @@ export const Input = ({
 			) : (
 				<div className="mortgageRadioContainer">
 					<div className={mortgageAmountInputContainerClassName}>
-						<input className={inputClassName} type={inputType} />
+						<input
+							className={inputClassName}
+							type={inputType}
+							name={inputRadioName}
+							value={inputRadioValue}
+						/>
 						<p>{mortgageType}</p>
 					</div>
 				</div>

@@ -85,7 +85,6 @@
 	background-color: var(--White);
 	display: flex;
 	width: 70vw;
-	height: 60vh;
 	border-top-right-radius: 2%;
 	border-bottom-right-radius: 2%;
 	border-top-left-radius: 2%;
@@ -119,64 +118,47 @@
 	padding: var(--button-padding-vertical, 4px)
 		var(--button-padding-horizontal, 8px);
 }
+.button-text {
+	border-bottom: 1px solid var(--button-text);
 
-.cancel-all > button {
+}
+
+.cancel-all>div {
 	font-size: var(--font-siz-medium);
-	background-color: transparent;
 	color: var(--button-text);
+	
+	}
+	
+	.cancel-all {
+	background-color: transparent;
 	border: 0px;
+
 }
 
 .cancel-all > button:hover {
 	border-bottom: 1.5px solid var(--button-text);
 	transition: all 0.2s;
 }
-.right-container {
-	display: grid;
-	place-items: center;
-	place-content: center;
-	padding: var(--padding) var(--padding);
-	background-color: var(--Slate-900);
-	width: 50%;
-	border-top-right-radius: 2%;
-	border-bottom-right-radius: 2%;
-	border-bottom-left-radius: 8%;
-}
-.right_container-child {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+.form-submit--button {
+	background-color: transparent;
+	border: none;
 }
 
-.right_container-child > div {
+.form-submit--button>div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 0.3rem;
+		background-color: red;
+		width: 50%;
+		padding: 0.4rem 0.4rem;
+		color: red;
+		font-size: var(--font-siz-small);
+		background-color: var(--lime);
+		border-radius: 1rem;
+
 }
 
-.right_container-child .illustration-img {
-	width: 35%;
-	object-fit: cover;
-}
-
-.right_container_child-result,
-.right_container_child-complete {
-	text-align: center;
-
-	font-family: var(--font-family);
-}
-
-.right_container_child-result {
-	color: var(--White);
-	font-weight: var(--font-weight-bold);
-	font-size: var(--font-siz-medium);
-}
-
-.right_container_child-complete {
-	font-weight: var(--font-weight-medium);
-	font-size: var(--font-siz-small);
-	color: var(--Slate-500);
-}
 
 @media screen and (max-width: 800px) {
 	.content-container {
@@ -205,13 +187,13 @@
 		border-radius: 0px;
 	}
 	.left-container {
-		height: 70vh;
+		height: 60vh;
 		width: 100%;
 		gap: 3rem;
 	}
 
 	.right-container {
-		height: 30vh;
+		height: 40vh;
 	}
   
 }
