@@ -173,27 +173,6 @@
 		height: 100vh;
 	}
 
-	.right_container-child .illustration-img {
-		width: 35%;
-		object-fit: cover;
-	}
-	.right_container-child .illustration-img {
-		width: 55%;
-	}
 
-	.right-container {
-		width: 100%;
-
-		border-radius: 0px;
-	}
-	.left-container {
-		height: 60vh;
-		width: 100%;
-		gap: 3rem;
-	}
-
-	.right-container {
-		height: 40vh;
-	}
   
 }

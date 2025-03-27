@@ -1,5 +1,6 @@
 
-import IllustrationEmpty from "../src/assets/images/illustration-empty.svg"
+import "../css/right_container.css";
+import IllustrationEmpty from "../assets/images/illustration-empty.svg";
 const RightContainer = () => {
 	return(
 		  <div className="right-container">
