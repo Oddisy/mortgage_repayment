@@ -14,6 +14,7 @@ export const Input = ({
 	inputRadioValue,
 	inputRadioName,
 	formInputValue,
+	onChange,
 }: InputProps) => {
 	return (
 		<div className={mortgageAmountContainerClass}>
@@ -26,8 +27,9 @@ export const Input = ({
 						{currencySign}
 					</div>
 					<input
+						onChange={onChange}
 						className={inputClassName}
-						value={Number(formInputValue)}
+						value={formInputValue}
 						type={inputType}
 					/>
 				</div>

@@ -1,13 +1,16 @@
-
+import { useState } from "react";
 import "./App.css";
 import { Button } from "../src/component/button";
 import Form from "./component/form";
 import RightContainer from "./component/right_container";
+import { useMonthlyPayment } from "./component/hooks/useMonthlyPayment";
 
 function App() {
+	const [principal, setPrincipal] = useState<number>(0);
+	const [years, setYears] = useState<number>(0);
+	const [yearlyInterest, setYearlyInterest] = useState<number>(0);
 
-
-
+	const { ca } = useMonthlyPayment({ principal, yearlyInterest, years });
 	return (
 		<div className="container">
 			<div className="container_sub-container">
@@ -20,7 +23,7 @@ function App() {
 								btnText="Cancel All"
 							/>
 						</div>
-						<Form {calculateMonthlyPayment}/>
+						<Form />
 					</div>
 					<RightContainer />
 				</div>

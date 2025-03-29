@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+import { ReactElement, Dispatch, SetStateAction, ChangeEvent } from "react";
 
-export  interface ButtonProps {
+export interface ButtonProps {
 	btnText: string;
 	btnClassName?: string;
 	btnIcon?: ReactElement;
@@ -20,6 +20,7 @@ export interface InputProps {
 	inputRadioName?: string;
 	inputRadioValue?: string;
 	formInputValue?: number;
+	onChange?: (value: number) => void;
 }
 export interface useMonthlyPaymentProps {
 	principal: number;
