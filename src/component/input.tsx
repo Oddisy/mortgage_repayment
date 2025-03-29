@@ -1,5 +1,6 @@
-import {InputProps} from "../../interface"
-import "../css/input.css"
+import { event } from "react";
+import { InputProps } from "../../interface";
+import "../css/input.css";
 export const Input = ({
 	mortgageAmountContainerClass,
 	mortgageAmountInputContainerClassName,
@@ -14,7 +15,7 @@ export const Input = ({
 	inputRadioValue,
 	inputRadioName,
 	formInputValue,
-	onChange,
+	formInputValueOnChange,
 }: InputProps) => {
 	return (
 		<div className={mortgageAmountContainerClass}>
@@ -27,7 +28,11 @@ export const Input = ({
 						{currencySign}
 					</div>
 					<input
-						onChange={onChange}
+						onChange={(event) =>
+							formInputValueOnChange?.(
+								parseFloat(event.target.value)
+							)
+						}
 						className={inputClassName}
 						value={formInputValue}
 						type={inputType}

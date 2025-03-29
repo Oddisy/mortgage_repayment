@@ -6,7 +6,7 @@ export interface ButtonProps {
 	btnIcon?: ReactElement;
 	onClick?: () => void;
 }
-export interface InputProps {
+export interface InputProps extends FormProps {
 	mortgageAmountContainerClass: string;
 	mortgageAmountInputContainerClassName: string;
 	mortgageInputCurrencyClassName?: string;
@@ -19,8 +19,16 @@ export interface InputProps {
 	mortgageType?: string;
 	inputRadioName?: string;
 	inputRadioValue?: string;
-	formInputValue?: number;
-	onChange?: (value: number) => void;
+	formInputValue?: string;
+	formInputValueOnChange?: (value: number) => void;
+}
+export interface FormProps {
+	principal: number;
+	setPrincipal?: (value: number) => void;
+	years?: number;
+	setYears?: (value: number) => void;
+	yearlyInterest?: string;
+	setYearlyInterest?: (value: number) => void;
 }
 export interface useMonthlyPaymentProps {
 	principal: number;

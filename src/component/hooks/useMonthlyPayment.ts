@@ -18,5 +18,5 @@ export const useMonthlyPayment = ({
 			(Math.pow(1 + monthlyInterest, totalPaymentMonths) - 1)
 		return actualPayment;
 	}, [principal, yearlyInterest, years]);
-	return calculateMonthlyPayment;
+	return calculateMonthlyPayment();
 };

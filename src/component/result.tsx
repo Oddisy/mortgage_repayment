@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 // const Result = () => {
 // 	const [loanAmount, setLoanAmount] = useState(300000);
@@ -81,13 +81,3 @@ import { useState } from "react";
 // 	);
 // }
 // export default Result
-
-const MortgageCalculator = () => {
-	const [yearly , setYearly] =useState()
-	const [interestRate, setInterestRate] = useState()
-	const [loanAmount, setLaonAmount] = useState()
-	const payMonth  = yearly * 12 
-	return (
-
-	)
-}

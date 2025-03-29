@@ -4,15 +4,25 @@ import { Input } from "../component/input";
 import { mortgageTypeData, inputProps } from "../data/formData";
 import { Button } from "./button";
 import { IoIosCalculator } from "react-icons/io";
+import { FormProps } from "../../interface";
 
-const Form = (e: FormEvent) => {
-	e.preventDefault();
+const Form = ({
+	setPrincipal,
 
+	setYears,
+
+	setYearlyInterest,
+}: FormProps) => {
 	return (
 		<form action="">
 			<div className="mortgage-duration--container">
 				<Input
-					formInputValue={principal}
+					principal={principal}
+					setPrincipal={setPrincipal}
+					years={years}
+					setYears={setYears}
+					yearlyInterest={yearlyInterest}
+					setYearlyInterest={setYearlyInterest}
 					htmlFor="text"
 					{...inputProps}
 					currencySign="$"
