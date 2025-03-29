@@ -1,4 +1,4 @@
-import { ReactElement, Dispatch, SetStateAction, ChangeEvent } from "react";
+import { ReactElement } from "react";
 
 export interface ButtonProps {
 	btnText: string;
@@ -6,7 +6,12 @@ export interface ButtonProps {
 	btnIcon?: ReactElement;
 	onClick?: () => void;
 }
-export interface InputProps extends FormProps {
+export interface MonthlyPaymentInputProps {
+	principal?: number;
+	years?: number;
+	yearlyInterest?: string;
+}
+export interface InputProps {
 	mortgageAmountContainerClass: string;
 	mortgageAmountInputContainerClassName: string;
 	mortgageInputCurrencyClassName?: string;
@@ -19,16 +24,14 @@ export interface InputProps extends FormProps {
 	mortgageType?: string;
 	inputRadioName?: string;
 	inputRadioValue?: string;
-	formInputValue?: string;
+	formInputValue?: string | number | undefined;
 	formInputValueOnChange?: (value: number) => void;
 }
 export interface FormProps {
-	principal: number;
 	setPrincipal?: (value: number) => void;
-	years?: number;
 	setYears?: (value: number) => void;
-	yearlyInterest?: string;
 	setYearlyInterest?: (value: number) => void;
+	MonthlyPaymentInputProps?: string;
 }
 export interface useMonthlyPaymentProps {
 	principal: number;

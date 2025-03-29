@@ -7,22 +7,20 @@ import { IoIosCalculator } from "react-icons/io";
 import { FormProps } from "../../interface";
 
 const Form = ({
+	principal,
 	setPrincipal,
-
+	years,
 	setYears,
-
+	yearlyInterest,
 	setYearlyInterest,
+	monthlyPaymentInput,
 }: FormProps) => {
 	return (
 		<form action="">
 			<div className="mortgage-duration--container">
 				<Input
-					principal={principal}
-					setPrincipal={setPrincipal}
-					years={years}
-					setYears={setYears}
-					yearlyInterest={yearlyInterest}
-					setYearlyInterest={setYearlyInterest}
+					formInputValue={principal}
+					formInputValueOnChange={setPrincipal}
 					htmlFor="text"
 					{...inputProps}
 					currencySign="$"

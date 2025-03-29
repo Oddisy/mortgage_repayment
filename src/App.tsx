@@ -32,6 +32,7 @@ function App() {
 							setPrincipal={setPrincipal}
 							setYears={setYears}
 							setYearlyInterest={setYearlyInterest}
+							monthlyPaymentInput={monthlyPaymentInput}
 						/>
 					</div>
 					<RightContainer />

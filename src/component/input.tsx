@@ -1,4 +1,3 @@
-import { event } from "react";
 import { InputProps } from "../../interface";
 import "../css/input.css";
 export const Input = ({
