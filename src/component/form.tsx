@@ -1,13 +1,19 @@
+import { useState } from "react";
 import "../css/form.css";
 import { Input } from "../component/input";
 import { mortgageTypeData, inputProps } from "../data/formData";
 import { Button } from "./button";
 import { IoIosCalculator } from "react-icons/io";
+import { useMonthlyPayment } from "../component/hooks/useMonthlyPayment";
 const Form = () => {
+	const [principal, setPrincipal] = useState<number>(0);
+	const [years, setYears] = useState<number>(0);
+	const [yearlyInterest, setYearlyInterest] = useState<number>(0);
 	return (
 		<form action="">
 			<div className="mortgage-duration--container">
 				<Input
+					formInputValue={principal}
 					htmlFor="text"
 					{...inputProps}
 					currencySign="$"
@@ -60,11 +66,11 @@ const Form = () => {
 				))}
 			</div>
 			<Button
-			btnIcon={<IoIosCalculator/>}
+				btnIcon={<IoIosCalculator />}
 				btnClassName="form-submit--button"
 				btnText="Calculate Repayments"
 			/>
-			
+			<p>{monthlyPayment}</p>
 		</form>
 	);
 };

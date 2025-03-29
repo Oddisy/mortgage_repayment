@@ -18,5 +18,11 @@ export interface InputProps {
 	inputType: string;
 	mortgageType?: string;
 	inputRadioName?: string;
-	inputRadioValue?: string
+	inputRadioValue?: string;
+	formInputValue?: number;
+}
+export interface useMonthlyPaymentProps {
+	principal: number;
+	yearlyInterest: number;
+	years: number;
 }

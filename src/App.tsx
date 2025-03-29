@@ -1,10 +1,13 @@
-import "./App.css";
 
+import "./App.css";
 import { Button } from "../src/component/button";
 import Form from "./component/form";
 import RightContainer from "./component/right_container";
 
 function App() {
+
+
+
 	return (
 		<div className="container">
 			<div className="container_sub-container">
@@ -17,7 +20,7 @@ function App() {
 								btnText="Cancel All"
 							/>
 						</div>
-						<Form />
+						<Form {calculateMonthlyPayment}/>
 					</div>
 					<RightContainer />
 				</div>
