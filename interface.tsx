@@ -4,13 +4,10 @@ export interface ButtonProps {
 	btnText: string;
 	btnClassName?: string;
 	btnIcon?: ReactElement;
+	btnType?: string;
 	onClick?: () => void;
 }
-export interface MonthlyPaymentInputProps {
-	principal?: number;
-	years?: number;
-	yearlyInterest?: string;
-}
+
 export interface InputProps {
 	mortgageAmountContainerClass: string;
 	mortgageAmountInputContainerClassName: string;
@@ -24,14 +21,16 @@ export interface InputProps {
 	mortgageType?: string;
 	inputRadioName?: string;
 	inputRadioValue?: string;
-	formInputValue?: string | number | undefined;
+	formInputValue?: string | number;
 	formInputValueOnChange?: (value: number) => void;
 }
 export interface FormProps {
+	principal: number;
 	setPrincipal?: (value: number) => void;
+	years?: number;
 	setYears?: (value: number) => void;
+	yearlyInterest?: string;
 	setYearlyInterest?: (value: number) => void;
-	MonthlyPaymentInputProps?: string;
 }
 export interface useMonthlyPaymentProps {
 	principal: number;

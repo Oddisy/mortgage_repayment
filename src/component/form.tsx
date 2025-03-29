@@ -13,8 +13,10 @@ const Form = ({
 	setYears,
 	yearlyInterest,
 	setYearlyInterest,
-	monthlyPaymentInput,
 }: FormProps) => {
+	const handleSubmit = (e: FormEvent) => {
+		e.preventDefault;
+	};
 	return (
 		<form action="">
 			<div className="mortgage-duration--container">
@@ -34,6 +36,7 @@ const Form = ({
 
 			<div className="mortgage-duration--container">
 				<Input
+					formInputValue={years}
 					htmlFor="text"
 					{...inputProps}
 					labelText="Mortgage Type"
@@ -42,9 +45,10 @@ const Form = ({
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
 					inputClassName="form-input-class right"
-					onChange={}
+					formInputValueOnChange={setYears}
 				/>
 				<Input
+					formInputValue={yearlyInterest}
 					htmlFor="text"
 					{...inputProps}
 					currencySign="%"
@@ -53,6 +57,7 @@ const Form = ({
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
 					inputClassName="form-input-class right"
+					formInputValueOnChange={setYearlyInterest}
 				/>
 			</div>
 			<div className="mortgage-type--container">
@@ -77,6 +82,7 @@ const Form = ({
 				btnIcon={<IoIosCalculator />}
 				btnClassName="form-submit--button"
 				btnText="Calculate Repayments"
+				onClick={handleSubmit}
 			/>
 		</form>
 	);

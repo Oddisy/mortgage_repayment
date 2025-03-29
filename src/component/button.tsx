@@ -1,8 +1,14 @@
 import "../css/button.css"
 import {ButtonProps} from "../../interface"
-export const Button = ({ btnText, btnClassName, btnIcon }: ButtonProps) => {
+export const Button = ({
+	btnText,
+	btnClassName,
+	btnIcon,
+	btnType,
+	onClick,
+}: ButtonProps) => {
 	return (
-		<button className={btnClassName}>
+		<button type={btnType} onClick={onClick} className={btnClassName}>
 			<div>
 				<div>{btnIcon}</div>
 				<p>{btnText}</p>
