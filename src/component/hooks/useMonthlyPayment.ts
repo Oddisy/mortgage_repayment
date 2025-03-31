@@ -4,8 +4,7 @@ import { useMonthlyPaymentProps } from "../../../interface";
 export const useMonthlyPayment = ({
 	principal,
 	yearlyInterest,
-	years,
-	test
+	years
 }: useMonthlyPaymentProps) => {
 
 
@@ -19,6 +18,8 @@ export const useMonthlyPayment = ({
 				Math.pow(1 + monthlyInterest, totalPaymentMonths)) /
 			(Math.pow(1 + monthlyInterest, totalPaymentMonths) - 1)
 		return actualPayment
-	}, [principal, yearlyInterest, years, test]);
-	return calculateMonthlyPayment();
+	}, [principal, yearlyInterest, years]);
+	return {calculateMonthlyPayment}
 };
+
+

@@ -1,11 +1,10 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useMemo } from "react";
 import "../css/form.css";
 import { Input } from "../component/input";
 import { mortgageTypeData, inputProps } from "../data/formData";
 import { Button } from "./button";
 import { IoIosCalculator } from "react-icons/io";
 import { FormProps } from "../../interface";
-
 
 const Form = ({
 	principal,
@@ -14,17 +13,17 @@ const Form = ({
 	setYears,
 	yearlyInterest,
 	setYearlyInterest,
+	handleMonthlyRepayment,
 }: FormProps) => {
 	const handleSubmit = (e: FormEvent) => {
-		console.log("handleSubmit triggered");
 		e.preventDefault();
-		console.log("form data", { principal, years, yearlyInterest });
+		handleMonthlyRepayment();
 	};
 	return (
 		<form onSubmit={handleSubmit}>
 			<div className="mortgage-duration--container">
 				<Input
-					formInputValue={principal && principal}
+					formInputValue={principal ? principal : ""}
 					formInputValueOnChange={(e) =>
 						setPrincipal(parseFloat(e.target.value))
 					}
@@ -41,7 +40,7 @@ const Form = ({
 
 			<div className="mortgage-duration--container">
 				<Input
-					formInputValue={years}
+					formInputValue={years ? years : ""}
 					htmlFor="text"
 					{...inputProps}
 					labelText="Mortgage Type"

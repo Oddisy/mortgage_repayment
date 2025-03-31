@@ -9,11 +9,17 @@ function App() {
 	const [principal, setPrincipal] = useState(0);
 	const [years, setYears] = useState(0);
 	const [yearlyInterest, setYearlyInterest] = useState(0);
-	const monthlyPaymentInput = useMonthlyPayment({
+	const [monthlyRepaymentDisplay, setMonthlyRepaymentDisplay] =
+		useState<number>();
+	const { calculateMonthlyPayment } = useMonthlyPayment({
 		yearlyInterest,
 		years,
 		principal,
 	});
+	const handleMonthlyRepayment = () => {
+		const result = calculateMonthlyPayment();
+		setMonthlyRepaymentDisplay(result);
+	};
 
 	return (
 		<div className="container">
@@ -34,9 +40,12 @@ function App() {
 							setYears={setYears}
 							yearlyInterest={yearlyInterest}
 							setYearlyInterest={setYearlyInterest}
+							handleMonthlyRepayment={handleMonthlyRepayment}
 						/>
 					</div>
-					<RightContainer />
+					<RightContainer
+						monthlyRepaymentDisplay={monthlyRepaymentDisplay}
+					/>
 				</div>
 			</div>
 		</div>
