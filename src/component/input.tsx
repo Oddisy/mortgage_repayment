@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import { InputProps } from "../../interface";
 import "../css/input.css";
 export const Input = ({
@@ -27,11 +28,7 @@ export const Input = ({
 						{currencySign}
 					</div>
 					<input
-						onChange={(event) =>
-							formInputValueOnChange?.(
-								parseFloat(event.target.value)
-							)
-						}
+						onChange={formInputValueOnChange}
 						className={inputClassName}
 						value={formInputValue}
 						type={inputType}
