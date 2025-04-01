@@ -23,7 +23,7 @@ const Form = ({
 		<form onSubmit={handleSubmit}>
 			<div className="mortgage-duration--container">
 				<Input
-					formInputValue={principal ? principal : ""}
+					formInputValue={principal || ""}
 					formInputValueOnChange={(e) =>
 						setPrincipal(parseFloat(e.target.value))
 					}
@@ -40,7 +40,7 @@ const Form = ({
 
 			<div className="mortgage-duration--container">
 				<Input
-					formInputValue={years ? years : ""}
+					formInputValue={years || ""}
 					htmlFor="text"
 					{...inputProps}
 					labelText="Mortgage Type"
@@ -54,7 +54,7 @@ const Form = ({
 					}
 				/>
 				<Input
-					formInputValue={yearlyInterest ? yearlyInterest : ""}
+					formInputValue={yearlyInterest || ""}
 					htmlFor="text"
 					{...inputProps}
 					currencySign="%"
