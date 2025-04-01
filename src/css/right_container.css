@@ -21,7 +21,7 @@
 	align-items: center;
 }
 
-.right_container-child .illustration-img {
+ .illustration-img {
 	width: 35%;
 	object-fit: cover;
 }
@@ -48,11 +48,7 @@
 
 
 	.right_container-child .illustration-img {
-		width: 35%;
 		object-fit: cover;
-	}
-
-	.right_container-child .illustration-img {
 		width: 55%;
 	}
 
@@ -115,8 +111,10 @@
 
 .result-container--bottom {
 	background-color: var(--Slate-1000);
+	border-top: 2px solid var(--lime);
 	height: 50%;
 	padding: 1rem;
+	border-radius: 0.5rem 0.5rem 0rem;
 }
 
 .result-container--bottom--monthly-payment,
@@ -135,4 +133,10 @@
 
 .result-container--bottom--payment-display {
 	color: var(--lime)
+}
+.result-container--bottom--total-paymemt>h3 {
+	color: var(--White);
+	font-size: var(--font-siz-medium);
+	opacity: 1;
+
 }

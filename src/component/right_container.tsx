@@ -39,16 +39,18 @@ const RightContainer = ({ monthlyRepaymentDisplay }: RightContainerProp) => {
 							<h4 className="result-container-small--text bottom">
 								Your monthly repayments
 							</h4>
-							<h2 className="result-container--bottom--payment-display">{`${new Intl.NumberFormat(
-								"en-us",
-								{ style: "currency", currency: "USD" }
-							).format(monthlyRepaymentDisplay || 0)}`}</h2>
+							<h2 className="result-container--bottom--payment-display">
+								{`${new Intl.NumberFormat("en-us", {
+									style: "currency",
+									currency: "USD",
+								}).format(monthlyRepaymentDisplay || 0)}`}
+							</h2>
 						</div>
 						<div className="result-container--bottom--total-paymemt">
 							<h4 className="result-container-small--text bottom">
 								Total you'll repay over the term
 							</h4>
-							<h3>$1455555</h3>
+							<h3 className="">$1455555</h3>
 						</div>
 					</div>
 				</div>
