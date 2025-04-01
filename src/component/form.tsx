@@ -54,7 +54,7 @@ const Form = ({
 					}
 				/>
 				<Input
-					formInputValue={yearlyInterest}
+					formInputValue={yearlyInterest ? yearlyInterest : ""}
 					htmlFor="text"
 					{...inputProps}
 					currencySign="%"

@@ -15,7 +15,7 @@ const RightContainer = ({ monthlyRepaymentDisplay }: RightContainerProp) => {
 					/>
 				</div>
 				<h2 className="right_container_child-result">
-					{`$${monthlyRepaymentDisplay?.toFixed(2)}`}
+					{`$${monthlyRepaymentDisplay?.toFixed(2) || "0"}`}
 				</h2>
 				<h4 className="right_container_child-complete">
 					Complete the form and click "calculate repayments " to see
