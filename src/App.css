@@ -65,7 +65,7 @@
 	background-color: var(--Slate-100);
 	width: var(--width-full);
 	max-width: 1500px;
-	min-height: fit-content;
+	height: 100vh;
 	display: grid;
 	place-items: center;
 	margin: auto;
@@ -144,9 +144,15 @@
 
 
 @media screen and (max-width: 800px) {
+	.container {
+			min-height: fit-content;
+		}
 	.content-container {
 		width: 90vw;
 	}
+		.container_sub-container {
+			min-height: fit-content;
+		}
 }
 @media screen and (max-width: 430px) {
 	.content-container {
