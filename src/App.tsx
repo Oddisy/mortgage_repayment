@@ -22,7 +22,6 @@ function App() {
 			setTotalRepayment(calculateTotalMonthlyRepayment);
 		}, [calculateTotalMonthlyRepayment, years]);
 	const handleMonthlyRepayment = () => {
-		console.log("i created a function");
 		const result = calculateMonthlyPayment();
 		setMonthlyRepaymentDisplay(result);
 	};

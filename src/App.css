@@ -65,7 +65,7 @@
 	background-color: var(--Slate-100);
 	width: var(--width-full);
 	max-width: 1500px;
-	height: 100vh;
+	min-height: fit-content;
 	display: grid;
 	place-items: center;
 	margin: auto;
