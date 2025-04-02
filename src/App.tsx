@@ -11,15 +11,16 @@ function App() {
 	const [yearlyInterest, setYearlyInterest] = useState(0);
 	const [monthlyRepaymentDisplay, setMonthlyRepaymentDisplay] =
 		useState<number>();
-	const { calculateMonthlyPayment, calculateTotalMonthlyRepayment } =
-		useMonthlyPayment({
-			yearlyInterest,
-			years,
-			principal,
-		});
-	useEffect(() => {
-		calculateTotalMonthlyRepayment;
-	}, [calculateTotalMonthlyRepayment, years]);
+		const [totalRepayment, setTotalRepayment] = useState<number>();
+		const { calculateMonthlyPayment, calculateTotalMonthlyRepayment } =
+			useMonthlyPayment({
+				yearlyInterest,
+				years,
+				principal,
+			});
+		useEffect(() => {
+			setTotalRepayment(calculateTotalMonthlyRepayment);
+		}, [calculateTotalMonthlyRepayment, years]);
 	const handleMonthlyRepayment = () => {
 		const result = calculateMonthlyPayment();
 		setMonthlyRepaymentDisplay(result);
@@ -49,6 +50,7 @@ function App() {
 					</div>
 					<RightContainer
 						monthlyRepaymentDisplay={monthlyRepaymentDisplay}
+						totalRepayment={totalRepayment}
 					/>
 				</div>
 			</div>

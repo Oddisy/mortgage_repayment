@@ -88,6 +88,7 @@ const Form = ({
 			</div>
 
 			<Button
+				disabled={!(principal && years && yearlyInterest)}
 				btnIcon={<IoIosCalculator />}
 				btnClassName="form-submit--button"
 				btnText="Calculate Repayments"
