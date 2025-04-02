@@ -5,6 +5,7 @@ import { mortgageTypeData, inputProps } from "../data/formData";
 import { Button } from "./button";
 import { IoIosCalculator } from "react-icons/io";
 import { FormProps } from "../../interface";
+import { ToastContainer } from "react-toastify";
 
 const Form = ({
 	principal,
@@ -14,13 +15,18 @@ const Form = ({
 	yearlyInterest,
 	setYearlyInterest,
 	handleMonthlyRepayment,
+	notify,
 }: FormProps) => {
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		handleMonthlyRepayment();
+		if (!(principal && years && yearlyInterest)) {
+			notify();
+		}
 	};
 	return (
 		<form onSubmit={handleSubmit}>
+			<ToastContainer />
 			<div className="mortgage-duration--container">
 				<Input
 					formInputValue={principal || ""}

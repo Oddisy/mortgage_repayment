@@ -4,7 +4,7 @@ import { Button } from "../src/component/button";
 import Form from "./component/form";
 import RightContainer from "./component/right_container";
 import { useMonthlyPayment } from "./component/hooks/useMonthlyPayment";
-
+import { ToastContainer, toast } from "react-toastify";
 function App() {
 	const [principal, setPrincipal] = useState(0);
 	const [years, setYears] = useState(0);
@@ -25,6 +25,7 @@ function App() {
 		const result = calculateMonthlyPayment();
 		setMonthlyRepaymentDisplay(result);
 	};
+	const notify = () => toast("please input your loan data's ");
 
 	return (
 		<div className="container">
@@ -46,6 +47,7 @@ function App() {
 							yearlyInterest={yearlyInterest}
 							setYearlyInterest={setYearlyInterest}
 							handleMonthlyRepayment={handleMonthlyRepayment}
+							notify={notify}
 						/>
 					</div>
 					<RightContainer
