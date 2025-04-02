@@ -22,6 +22,7 @@ function App() {
 			setTotalRepayment(calculateTotalMonthlyRepayment);
 		}, [calculateTotalMonthlyRepayment, years]);
 	const handleMonthlyRepayment = () => {
+		console.log("i created a function");
 		const result = calculateMonthlyPayment();
 		setMonthlyRepaymentDisplay(result);
 	};
@@ -29,6 +30,7 @@ function App() {
 
 	return (
 		<div className="container">
+			<ToastContainer />
 			<div className="container_sub-container">
 				<div className="content-container">
 					<div className="left-container">
