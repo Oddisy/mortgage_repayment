@@ -1,10 +1,11 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useMonthlyPaymentProps } from "../../../interface";
 
 export const useMonthlyPayment = ({
 	principal,
 	yearlyInterest,
-	years
+	years,
+	
 }: useMonthlyPaymentProps) => {
 
 
@@ -19,7 +20,13 @@ export const useMonthlyPayment = ({
 			(Math.pow(1 + monthlyInterest, totalPaymentMonths) - 1)
 		return actualPayment
 	}, [principal, yearlyInterest, years]);
-	return {calculateMonthlyPayment}
+	const calculateTotalMonthlyRepayment = useCallback(() => {
+		const actualMonthlyRepayment = calculateMonthlyPayment()
+		const totalMonthlyRepayment =  actualMonthlyRepayment * years * 12
+		return totalMonthlyRepayment
+		
+	}, [calculateMonthlyPayment, years])
+	return {calculateMonthlyPayment , calculateTotalMonthlyRepayment}
 };
 
 

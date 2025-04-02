@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Button } from "../src/component/button";
 import Form from "./component/form";
@@ -11,11 +11,15 @@ function App() {
 	const [yearlyInterest, setYearlyInterest] = useState(0);
 	const [monthlyRepaymentDisplay, setMonthlyRepaymentDisplay] =
 		useState<number>();
-	const { calculateMonthlyPayment } = useMonthlyPayment({
-		yearlyInterest,
-		years,
-		principal,
-	});
+	const { calculateMonthlyPayment, calculateTotalMonthlyRepayment } =
+		useMonthlyPayment({
+			yearlyInterest,
+			years,
+			principal,
+		});
+	useEffect(() => {
+		calculateTotalMonthlyRepayment;
+	}, [calculateTotalMonthlyRepayment, years]);
 	const handleMonthlyRepayment = () => {
 		const result = calculateMonthlyPayment();
 		setMonthlyRepaymentDisplay(result);
