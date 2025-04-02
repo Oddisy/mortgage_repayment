@@ -6,6 +6,7 @@
 :root {
 	/* primary color  */
 	--lime: hsl(61, 70%, 52%);
+	--lime-hover: hsl(61, 70%, 45%);
 	--red: hsl(4, 69%, 50%);
 
 	/* neutral color (light mode ) */
@@ -139,25 +140,6 @@
 .cancel-all > button:hover {
 	border-bottom: 1.5px solid var(--button-text);
 	transition: all 0.2s;
-}
-.form-submit--button {
-	background-color: transparent;
-	border: none;
-}
-
-.form-submit--button>div {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.3rem;
-		background-color: red;
-		width: 50%;
-		padding: 0.4rem 0.4rem;
-		color: red;
-		font-size: var(--font-siz-small);
-		background-color: var(--lime);
-		border-radius: 1rem;
-
 }
 
 
