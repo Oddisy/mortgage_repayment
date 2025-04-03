@@ -17,3 +17,8 @@
 	padding-left: 1%;
 }
 
+@media screen and (max-width: 430px) {
+	.form-input-class {
+		height: 3rem;
+	}
+}

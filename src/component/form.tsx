@@ -44,7 +44,7 @@ const Form = ({
 				/>
 			</div>
 
-			<div className="mortgage-duration--container">
+			<div className="mortgage-duration--container second-container">
 				<Input
 					formInputValue={years || ""}
 					htmlFor="text"

@@ -77,3 +77,12 @@ form {
 	}
 
 }
+@media screen and (max-width: 430px) {
+
+
+	.mortgage-duration--container.second-container>div:first-child {
+
+		margin-bottom: 2rem;
+	}
+
+}
