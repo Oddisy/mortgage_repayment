@@ -23,7 +23,7 @@
 }
 
 .illustration-img {
-	width: 35%;
+	width: 50%;
 	object-fit: cover;
 }
 
@@ -118,8 +118,9 @@
 		border-radius: 0px;
 		
 	}
-
-	
+																																																																																																																																.right_container-child {
+																																																																																																																																	gap: 1rem;
+																																																																																																																																}
 
 		.right-container {
 		min-height: fit-content;
