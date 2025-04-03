@@ -22,7 +22,7 @@
 	color: red;
 	font-size: var(--font-siz-small);
 	background-color: var(--lime);
-	border-radius: 1rem;
+	border-radius: 1.5rem;
 
 
 }
@@ -37,4 +37,7 @@
 	.form-submit--button>div {
 		width: 100%;
 	}
+		.form-submit--button>div {
+			padding: 1rem 0.7rem;
+		}
 }
