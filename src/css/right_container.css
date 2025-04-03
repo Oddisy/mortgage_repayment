@@ -13,7 +13,7 @@
 .right_container-child {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: 1rem;
 }
 
 .right_container-child > div {
@@ -112,6 +112,9 @@
 		object-fit: cover;
 		width: 55%;
 	}
+																																																																																																																																																																																																																																																																.right-container {
+																																																																																																																																																																																																																																																																	padding: 2.8rem var(--padding);
+																																																																																																																																																																																																																																																																}
 
 	.right-container {
 		width: 100%;
