@@ -16,9 +16,10 @@ export const Input = ({
 	inputRadioName,
 	formInputValue,
 	formInputValueOnChange,
+	key
 }: InputProps) => {
 	return (
-		<div className={mortgageAmountContainerClass}>
+		<div key={key} className={mortgageAmountContainerClass}>
 			<label className={formInputLabelClass} htmlFor={htmlFor}>
 				{labelText}
 			</label>

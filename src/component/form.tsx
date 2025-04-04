@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { FormEvent , ChangeEvent} from "react";
 import "../css/form.css";
 import { Input } from "../component/input";
 import { mortgageTypeData, inputProps } from "../data/formData";
@@ -16,6 +16,39 @@ const Form = ({
 	handleMonthlyRepayment,
 	notify,
 }: FormProps) => {
+	const inputs = [
+		{
+			_id: "1",
+			value: principal,
+			onChange: (e: ChangeEvent<HTMLInputElement>) => {setPrincipal(parseFloat(e.target.value))},
+			currencySign: "$",
+			label:"Mortgage Amount",
+			
+				
+			 inputClassNameLocation: "left"
+		},{
+			_id: "2",
+			value: years,
+			onChange: (e: ChangeEvent<HTMLInputElement>) => (setYears(parseFloat(e.target.value))),
+			currencySign:"years",
+			label: "Mortgage Type",
+			mortgageInputCurrencyLocation:"right",
+			 
+				 inputClassNameLocation: "right"
+
+
+		},{
+			_id: "3",
+			value: yearlyInterest ,
+			onChange:(e: ChangeEvent<HTMLInputElement>) => (setYearlyInterest(parseFloat(e.target.value))),
+			currencySign:"%",
+			label:"Interest Rate",
+			mortgageInputCurrencyLocation:"right",	
+				inputClassNameLocation: "right"
+				
+
+
+		}]
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
 
@@ -29,50 +62,42 @@ const Form = ({
 		<form onSubmit={handleSubmit}>
 			<div className="mortgage-duration--container">
 				<Input
-					formInputValue={principal || ""}
-					formInputValueOnChange={(e) =>
-						setPrincipal(parseFloat(e.target.value))
-					}
-					htmlFor="text"
+
 					{...inputProps}
-					currencySign="$"
-					labelText="Mortgage Amount"
-					mortgageInputCurrencyClassName="mortgage_input-currency left"
+					formInputValue={inputs[0].value || ""}
+					formInputValueOnChange={inputs[0].onChange}
+					htmlFor={`input-${inputs[0]._id}`}
+					currencySign={inputs[0].currencySign}
+					labelText={inputs[0].label}
+					mortgageInputCurrencyClassName={`mortgage_input-currency ${inputs[0].mortgageInputCurrencyLocation}`}
 					inputClassName="form-input-class"
-					inputType="text"
+					inputType= "text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
+
+
 				/>
 			</div>
 
 			<div className="mortgage-duration--container second-container">
-				<Input
-					formInputValue={years || ""}
-					htmlFor="text"
+				{inputs.slice(1).map((item, _id) => {
+					return <Input
+					formInputValueOnChange={item.onChange}
+					key={item._id}
 					{...inputProps}
-					labelText="Mortgage Type"
-					currencySign="years"
-					mortgageInputCurrencyClassName="mortgage_input-currency right"
+					formInputValue={item.value || ""}
+					htmlFor={`input-${item._id}`}
+					currencySign={item.currencySign}
+					labelText={item.label}
+					mortgageInputCurrencyClassName={`mortgage_input-currency ${item.mortgageInputCurrencyLocation}`}
+					inputClassName={`form-input-class ${item.inputClassNameLocation}`}
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
-					inputClassName="form-input-class right"
-					formInputValueOnChange={(e) =>
-						setYears(parseFloat(e.target.value))
-					}
-				/>
-				<Input
-					formInputValue={yearlyInterest || ""}
-					htmlFor="text"
-					{...inputProps}
-					currencySign="%"
-					labelText="Interest Rate"
-					mortgageInputCurrencyClassName="mortgage_input-currency right"
-					inputType="text"
-					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
-					inputClassName="form-input-class right"
-					formInputValueOnChange={(e) =>
-						setYearlyInterest(parseFloat(e.target.value))
-					}
-				/>
+
+					/>
+				})
+
+				}
+
 			</div>
 			<div className="mortgage-type--container">
 				{mortgageTypeData.map((item, index) => (
