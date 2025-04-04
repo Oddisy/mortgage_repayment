@@ -1,7 +1,7 @@
 import { FormEvent , ChangeEvent} from "react";
 import "../css/form.css";
 import { Input } from "../component/input";
-import { mortgageTypeData, inputProps } from "../data/formData";
+import { mortgageTypeData } from "../data/formData";
 import { Button } from "./button";
 import { IoIosCalculator } from "react-icons/io";
 import { FormProps } from "../../interface";
@@ -16,7 +16,7 @@ const Form = ({
 	handleMonthlyRepayment,
 	notify,
 }: FormProps) => {
-	const inputs = [
+	const inputsObjects = [
 		{
 			_id: "1",
 			value: principal,
@@ -63,13 +63,14 @@ const Form = ({
 			<div className="mortgage-duration--container">
 				<Input
 
-					{...inputProps}
-					formInputValue={inputs[0].value || ""}
-					formInputValueOnChange={inputs[0].onChange}
-					htmlFor={`input-${inputs[0]._id}`}
-					currencySign={inputs[0].currencySign}
-					labelText={inputs[0].label}
-					mortgageInputCurrencyClassName={`mortgage_input-currency ${inputs[0].mortgageInputCurrencyLocation}`}
+mortgageAmountContainerClass= "mortgage_amount-container "
+formInputLabelClass= "form-input-label"
+					formInputValue={inputsObjects[0].value || ""}
+					formInputValueOnChange={inputsObjects[0].onChange}
+					htmlFor={`input-${inputsObjects[0]._id}`}
+					currencySign={inputsObjects[0].currencySign}
+					labelText={inputsObjects[0].label}
+					mortgageInputCurrencyClassName={`mortgage_input-currency ${inputsObjects[0].mortgageInputCurrencyLocation}`}
 					inputClassName="form-input-class"
 					inputType= "text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
@@ -79,11 +80,13 @@ const Form = ({
 			</div>
 
 			<div className="mortgage-duration--container second-container">
-				{inputs.slice(1).map((item, _id) => {
+				{inputsObjects.slice(1).map((item, _id) => {
 					return <Input
+					mortgageAmountContainerClass= "mortgage_amount-container "
+formInputLabelClass= "form-input-label"
 					formInputValueOnChange={item.onChange}
 					key={item._id}
-					{...inputProps}
+				
 					formInputValue={item.value || ""}
 					htmlFor={`input-${item._id}`}
 					currencySign={item.currencySign}
@@ -104,7 +107,8 @@ const Form = ({
 					<div key={index} className="mortgage-type--repayment">
 						<div className="mortgage-type--repayment-text">
 							<Input
-								{...inputProps}
+								mortgageAmountContainerClass= "mortgage_amount-container "
+formInputLabelClass= "form-input-label"
 								labelText={item.labelText}
 								inputType="radio"
 								mortgageAmountInputContainerClassName="mortgage_amount_input-container radio"
