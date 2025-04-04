@@ -25,7 +25,7 @@ function App() {
 		const result = calculateMonthlyPayment();
 		setMonthlyRepaymentDisplay(result);
 	};
-	const notify = () => toast("please input your loan data's ");
+	const notify = () => toast("please input your loan data ");
 
 	return (
 		<div className="container">
