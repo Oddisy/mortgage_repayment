@@ -43,8 +43,13 @@ form {
 }
 .mortgage-duration--container {
 	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
 	gap: 3%;
+}
+.uuu {
+	display: block;
+	color: var(--red)
 }
 
 .mortgage-type--container {
@@ -55,6 +60,7 @@ form {
 
 .mortgage-type--repayment {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 

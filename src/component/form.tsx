@@ -23,9 +23,7 @@ const Form = ({
 			onChange: (e: ChangeEvent<HTMLInputElement>) => {setPrincipal(parseFloat(e.target.value))},
 			currencySign: "$",
 			label:"Mortgage Amount",
-			
-				
-			 inputClassNameLocation: "left"
+				inputClassNameLocation: "left"
 		},{
 			_id: "2",
 			value: years,
@@ -57,6 +55,7 @@ const Form = ({
 		} else {
 			handleMonthlyRepayment();
 		}
+	
 	};
 	return (
 		<form onSubmit={handleSubmit}>
@@ -77,6 +76,13 @@ formInputLabelClass= "form-input-label"
 
 
 				/>
+				
+				<div className="uuu">
+					This field is required!
+				</div>
+
+
+
 			</div>
 
 			<div className="mortgage-duration--container second-container">
@@ -100,6 +106,9 @@ formInputLabelClass= "form-input-label"
 				})
 
 				}
+					<div className="uuu">
+					This field is required!
+				</div>
 
 			</div>
 			<div className="mortgage-type--container">
@@ -120,6 +129,9 @@ formInputLabelClass= "form-input-label"
 						</div>
 					</div>
 				))}
+					<div className="uuu">
+					This field is required!
+				</div>
 			</div>
 
 			<Button
