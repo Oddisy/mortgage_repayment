@@ -13,9 +13,18 @@ const Form = ({
 	setYears,
 	yearlyInterest,
 	setYearlyInterest,
+	error,
+	setError,
 	handleMonthlyRepayment,
 	notify,
 }: FormProps) => {
+	const handleBlur = () => {
+		if(!(principal || years || yearlyInterest)) {
+			setError(true)}else {
+				setError(false)
+			}
+		 
+	}
 	const inputsObjects = [
 		{
 			_id: "1",
@@ -23,7 +32,8 @@ const Form = ({
 			onChange: (e: ChangeEvent<HTMLInputElement>) => {setPrincipal(parseFloat(e.target.value))},
 			currencySign: "$",
 			label:"Mortgage Amount",
-				inputClassNameLocation: "left"
+				inputClassNameLocation: "left",
+				onBlur: handleBlur
 		},{
 			_id: "2",
 			value: years,
@@ -32,7 +42,8 @@ const Form = ({
 			label: "Mortgage Type",
 			mortgageInputCurrencyLocation:"right",
 			 
-				 inputClassNameLocation: "right"
+				 inputClassNameLocation: "right",
+				 onBlur:handleBlur
 
 
 		},{
@@ -42,7 +53,8 @@ const Form = ({
 			currencySign:"%",
 			label:"Interest Rate",
 			mortgageInputCurrencyLocation:"right",	
-				inputClassNameLocation: "right"
+				inputClassNameLocation: "right",
+				onBlur: handleBlur
 				
 
 
@@ -52,9 +64,14 @@ const Form = ({
 
 		if (!(principal && years && yearlyInterest)) {
 			notify();
+			setError(true)
 		} else {
 			handleMonthlyRepayment();
 		}
+
+		
+
+
 	
 	};
 	return (
@@ -73,13 +90,17 @@ formInputLabelClass= "form-input-label"
 					inputClassName="form-input-class"
 					inputType= "text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
+					formInputOnBlur={inputsObjects[0].onBlur}
+					
 
 
 				/>
+				{error &&
 				
-				<div className="uuu">
+				(<div className="uuu">
 					This field is required!
-				</div>
+				</div>)
+}
 
 
 
@@ -87,11 +108,13 @@ formInputLabelClass= "form-input-label"
 
 			<div className="mortgage-duration--container second-container">
 				{inputsObjects.slice(1).map((item, _id) => {
-					return <Input
+					return (
+					<div
+					key={item._id}><Input
 					mortgageAmountContainerClass= "mortgage_amount-container "
 formInputLabelClass= "form-input-label"
 					formInputValueOnChange={item.onChange}
-					key={item._id}
+					
 				
 					formInputValue={item.value || ""}
 					htmlFor={`input-${item._id}`}
@@ -101,14 +124,22 @@ formInputLabelClass= "form-input-label"
 					inputClassName={`form-input-class ${item.inputClassNameLocation}`}
 					inputType="text"
 					mortgageAmountInputContainerClassName="mortgage_amount_input-container"
+					formInputOnBlur={item.onBlur}
 
 					/>
+					
+					{error &&
+				
+				(<div className="uuu">
+					This field is required!
+				</div>)
+}
+
+					</div>)
 				})
 
 				}
-					<div className="uuu">
-					This field is required!
-				</div>
+				
 
 			</div>
 			<div className="mortgage-type--container">
@@ -125,13 +156,18 @@ formInputLabelClass= "form-input-label"
 								inputClassName="form-input-class"
 								inputRadioName={item.inputRadioName}
 								inputRadioValue={item.inputRadioValue}
+								
 							/>
 						</div>
 					</div>
 				))}
-					<div className="uuu">
+							{error &&
+				
+				(<div className="uuu">
 					This field is required!
-				</div>
+				</div>)
+}
+
 			</div>
 
 			<Button

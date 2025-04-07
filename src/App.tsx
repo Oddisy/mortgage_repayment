@@ -11,6 +11,7 @@ function App() {
 	const [yearlyInterest, setYearlyInterest] = useState(0);
 	const [monthlyRepaymentDisplay, setMonthlyRepaymentDisplay] =
 		useState<number>();
+		const [error, setError] = useState<boolean>(false)
 		const [totalRepayment, setTotalRepayment] = useState<number>();
 		const { calculateMonthlyPayment, calculateTotalMonthlyRepayment } =
 			useMonthlyPayment({
@@ -49,6 +50,8 @@ function App() {
 							setYearlyInterest={setYearlyInterest}
 							handleMonthlyRepayment={handleMonthlyRepayment}
 							notify={notify}
+							error={error}
+							setError={setError}
 						/>
 					</div>
 					<RightContainer

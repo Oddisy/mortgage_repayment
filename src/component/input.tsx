@@ -16,6 +16,7 @@ export const Input = ({
 	inputRadioName,
 	formInputValue,
 	formInputValueOnChange,
+	formInputOnBlur
 	
 }: InputProps) => {
 	return (
@@ -29,6 +30,7 @@ export const Input = ({
 						{currencySign}
 					</div>
 					<input
+					onBlur={formInputOnBlur}
 						onChange={formInputValueOnChange}
 						className={inputClassName}
 						value={formInputValue}
